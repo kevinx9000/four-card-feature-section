@@ -1,0 +1,161 @@
+/**********  MOBILE-FIRST DESIGN **********/
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+    /* primary */
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    /* neutral */
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+}
+
+/***** RESET STYLES *****/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--very-light-gray);
+    color: var(--grayish-blue);
+}
+
+h1,
+h2 {
+    color: var(--very-dark-blue);
+    font-weight: 600;
+}
+
+main {
+    width: 85%;
+    max-width: 350px;
+    margin: 80px auto;
+}
+
+/***** CONTENT *****/
+/* INTRO */
+.intro {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.intro .subheading {
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.intro .heading {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* CARDS */
+section.card {
+    background-color: white;
+    border-radius: 0.50rem;
+    margin-bottom: 24px;
+    padding: 24px;
+    max-width: 350px;
+    box-shadow: 0px 10px 20px 0px hsla(229, 6%, 66%, 50%);
+}
+
+.card-heading {
+    margin-bottom: 8px;
+}
+
+.card-text {
+    font-size: 0.9375rem;
+}
+
+section .icon {
+    display: block;
+    margin-left: auto;
+    margin-top: 24px;
+}
+
+.supervisor-card {
+    border-top: solid 4px var(--cyan);
+}
+
+.team-builder-card {
+    border-top: solid 4px var(--red);
+}
+
+.karma-card {
+    border-top: solid 4px var(--orange);
+}
+
+.calculator-card {
+    border-top: solid 4px var(--blue);
+}
+
+/***** FOOTER *****/
+footer {
+    margin: 16px;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/********** RESPONSIVE LAYOUTS **********/
+/* LAPTOP-DESKTOP */
+@media only screen and (min-width: 1024px) {
+    main {
+        width: 100%;
+        max-width: none;
+        margin-bottom: 20px;
+    }
+
+    /* INTRO */
+    .intro {
+        width: 550px;
+        margin: 32px auto 80px;
+    }
+
+    .intro .subheading,
+    .intro .heading {
+        font-size: 2.5rem;
+    }
+
+    /* CARDS CONTAINER */
+    .cards-container {
+        width: fit-content;
+        margin: 0 auto;
+        display: grid;
+        column-gap: 24px;
+        grid-template-areas:
+            ". . t t . ."
+            "s s t t c c"
+            "s s k k c c"
+            ". . k k . .";
+    }
+
+    .supervisor-card {
+        grid-area: s;
+    }
+
+    .team-builder-card {
+        grid-area: t;
+    }
+
+    .karma-card {
+        grid-area: k;
+    }
+
+    .calculator-card {
+        grid-area: c;
+    }
+}
